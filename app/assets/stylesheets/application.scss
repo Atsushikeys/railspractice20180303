@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "toastr";
 
 .jumbotron {
     padding-top: 0px;
@@ -37,13 +38,13 @@
 
 //navbar-deviseのcss
 .navbar-devise {
-    background: #000;
-    border-color: #fff;
+    background: #3f3f3f;
+    border-color: #ffffff;
     z-index: 10;
 }
 
 .navbar-devise .navbar-nav > li > a {
-    color: #222222;
+    color: #000000;
     font-size: 13px;
 }
 
