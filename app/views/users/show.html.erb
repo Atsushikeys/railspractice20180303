@@ -1,14 +1,9 @@
 <%= render 'partial/navbar' %>
 
-
 <div class="container">
 	<div class="row">
 		<div class="col-lg-3 col-md-4">
-			<div class="user-profile row-space-4 text-center">
-				<%= image_tag @user.image, class: "profile-full img-circle" %>
-				
-			</div>
-
+			
 			<div class="panel panel-default verifications hidden-xs hidden-sm">
 				<div class="panel-heading">
 					認証済みID
@@ -30,9 +25,7 @@
 		</div>
 
 		<div class="col-lg-9 col-md-8 col-sm-12">
-			<h1>こんにちは、<%= @user.name %>です!</h1>
-			<p>自己紹介</p>
-			<%= @user.description %>
+			<h1>こんにちわ</h1>
 		</div>
 	</div>  	
 </div>
