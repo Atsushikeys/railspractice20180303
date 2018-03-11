@@ -1,18 +1,14 @@
-<script type="text/javascript">
-	$(function(){
-		$(".navbar").removeClass("navbar-devise");
-		$(".navbar").addClass("navbar-default");
-	});
-</script>
-
-
 <div class="jumbotron">
  <%= render 'partial/navbar'%>
 
 	<div class="container">
 		<div class="row">
 			<div class="col-md-offset-3 col-md-6 text-center">
-				  <h1 class="display-3">SonoLigo(　･∀･)ﾉ</h1>				
+				  <h1 class="display-3">SonoLigo(　･∀･)ﾉ</h1>
+					
+				  <% @user.each do |person|%>
+				  	<%= person.name %>
+				  <% end %>				
 			</div>
 		</div>
 	</div>	
@@ -21,3 +17,12 @@
 
 
 </div>
+
+
+<script type="text/javascript">
+	$(function(){
+		$(".navbar").removeClass("navbar-devise");
+		$(".navbar").addClass("navbar-default");
+	});
+</script>
+

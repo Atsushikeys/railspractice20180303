@@ -6,23 +6,36 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+             
+
   </head>
 
   <body>
-<%= yield %>
+    
+    <%= yield %>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-<!-- Flashにメッセージがあるとき -->
-<% unless flash.empty? %>
-  <script type="text/javascript">
-      <% flash.each do |f| %>
-        <% type = f[0].to_s.gsub('alert','error').gsub('notice','info') %>
-        toastr['<%= type %>']('<%= f[1] %>');
-      <% end %>
-  </script>
-<% end %>
+    <!-- Flashにメッセージがあるとき -->
+    <% unless flash.empty? %>
+      <script type="text/javascript">
+          <% flash.each do |f| %>
+            <% type = f[0].to_s.gsub('alert','error').gsub('notice','info') %>
+            toastr['<%= type %>']('<%= f[1] %>');
+          <% end %>
+      </script>
+    <% end %>
 
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/js/materialize.min.js"></script>
   </body>
 </html>
