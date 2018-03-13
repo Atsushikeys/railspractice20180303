@@ -1,29 +1,49 @@
-<!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="#">one</a></li>
-  <li><a href="#">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#">three</a></li>
-</ul>
-<nav>
+<nav class="blue darken-3">
   <div class="nav-wrapper">
     <a href="/" class="brand-logo">SonoLigo</a>
+
+    <!-- PC用メニュー -->
     <ul class="right hide-on-med-and-down">
       <% if (!user_signed_in?) %>
           <!-- ログインしていない時 -->
             <li><%= link_to "先生になる" ,new_user_registration_path %></li>
             <li><%= link_to "ログイン" ,user_session_path %></li>
           <% else %>
-            
-              <li><a class="dropdown-trigger" href="#!" data-target="dropdown2"><%= current_user.email %> <span class="caret"></span></a></li>
-              <ul id= "dropdown2" class='dropdown-content'>
+            <!-- ログインしている時 -->
+              <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><%= current_user.email %> <span class="caret"></span></a></li>
+              <ul id= "dropdown1" class='dropdown-content'>
                 <li><%= link_to "プロフィール",user_path(current_user) %></li>
+                <li><a href="#">楽器を登録</a></li>
                 <li><%= link_to "ログアウト" ,destroy_user_session_path,method: :delete %></li>  
               </ul>
             
             
           <% end %>
     </ul>
+
+
+    <!-- スマホ、タブレット用メニュー -->
+    <ul class="right show-on-medium-and-down hide-on-med-and-up">
+      <% if (!user_signed_in?) %>
+          <!-- ログインしていない時 -->
+            <li><a href ="#" class="dropdown-trigger" data-target="dropdown2"><i class="material-icons">dehaze</i></a></li>
+            <ul id="dropdown2" class="dropdown-content">
+            <li><%= link_to "先生になる" ,new_user_registration_path %></li>
+            <li><%= link_to "ログイン" ,user_session_path %></li>
+            </ul>
+          <% else %>
+            <!-- ログインしている時 -->
+              <li><a class="dropdown-trigger" href="#!" data-target="dropdown3"><i class="material-icons">dehaze  </i> </a></li>
+              <ul id= "dropdown3" class='dropdown-content'>
+                <li><%= link_to "プロフィール",user_path(current_user) %></li>
+                <li><a href="#">楽器を登録</a></li>
+                <li><%= link_to "ログアウト" ,destroy_user_session_path,method: :delete %></li>  
+              </ul>
+            
+            
+          <% end %>
+    </ul>
+
   </div>
 </nav>
 
