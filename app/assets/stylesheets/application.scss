@@ -111,6 +111,11 @@
     width: 100%;
 }
 
+.boxprofile{
+    border: solid 3px #95ccff;
+    border-radius: 8px;
+  }
+
 .vertification-checked:before{
   content: "\f00c";
   font-family: FontAwesome;

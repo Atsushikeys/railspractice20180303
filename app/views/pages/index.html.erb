@@ -8,11 +8,21 @@
 					<div class="row">
 					  <% @user.each do |person|%>
 					  	
-				        <div class="col s12 m6">
+				        <div class="col s12 m4">
 				          <div class="card blue-grey darken-1">
 				            <div class="card-content white-text">
-				              <span class="card-title"><%= person.name %></span>
-				              <%= person.description %>
+				              <span class="card-title">
+				              	<!-- 名前 -->
+				              	<%= person.name %>
+			              	</span>
+			              	<!-- 性別 -->
+			              		<span>性別: <%= person.sex %></span>
+			              		<span>楽器 :<%= person.instrument %></span>
+			              		
+				              	<!-- 自己紹介 -->
+				              	<div>
+				             	 	<%= person.description %>
+				             	 </div>
 				            </div>
 				            <div class="card-action">
 				              <a href="#">プロフィールを見る</a>

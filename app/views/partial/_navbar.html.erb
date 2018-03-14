@@ -13,6 +13,7 @@
               <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><%= current_user.email %> <span class="caret"></span></a></li>
               <ul id= "dropdown1" class='dropdown-content'>
                 <li><%= link_to "プロフィール",user_path(current_user) %></li>
+                <li><%= link_to "プロフィールを編集",edit_user_registration_path %></li>
                 <li><a href="#">楽器を登録</a></li>
                 <li><%= link_to "ログアウト" ,destroy_user_session_path,method: :delete %></li>  
               </ul>
